@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Digital Health Record – Migrant Workers</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI", Arial, sans-serif;
+}
+
+body{
+  background:#eef7f6;
+}
+
+/* HEADER */
+header{
+  background:linear-gradient(90deg,#0f766e,#22c55e);
+  padding:16px 40px;
+  color:#fff;
+}
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+nav button{
+  background:none;
+  border:none;
+  color:#eafffa;
+  font-size:16px;
+  margin-left:20px;
+  cursor:pointer;
+}
+
+/* PAGE CONTROL */
+.page{
+  display:none;
+}
+.page.active{
+  display:block;
+}
+
+/* CONTAINER & CARD */
+.container{
+  max-width:900px;
+  margin:50px auto;
+}
+
+.card{
+  background:#fff;
+  border-radius:12px;
+  padding:35px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+h2{
+  color:#0f766e;
+  margin-bottom:15px;
+}
+
+/* BUTTONS */
+.btn{
+  background:#16a34a;
+  color:#fff;
+  border:none;
+  padding:12px 28px;
+  border-radius:8px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.btn.secondary{
+  background:#0f766e;
+  margin-left:10px;
+}
+
+/* FORMS */
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-top:20px;
+}
+
+input, select{
+  width:100%;
+  padding:12px;
+  border-radius:8px;
+  border:1px solid #d1d5db;
+}
+
+/* DETAILS */
+.row{
+  display:flex;
+  justify-content:space-between;
+  padding:12px 0;
+  border-bottom:1px solid #e5e7eb;
+}
+
+.label{
+  color:#0f766e;
+  font-weight:600;
+}
+
+/* CHECKUP */
+.checkup{
+  border:1px solid #e5e7eb;
+  border-radius:10px;
+  padding:18px;
+  margin-bottom:20px;
+}
+
+footer{
+  text-align:center;
+  color:#64748b;
+  padding:20px;
+}
+
+@media(max-width:700px){
+  .form-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <h3>Digital Health Record — Migrant Workers (Kerala)</h3>
+    <div>
+      <button onclick="showPage('home')">Home</button>
+      <button onclick="showPage('register')">Register</button>
+      <button onclick="showPage('login')">Login</button>
+    </div>
+  </nav>
+</header>
+
+<!-- HOME -->
+<section id="home" class="page active">
+  <div class="container">
+    <div class="card">
+      <h2>Welcome to the Digital Health Record Management System</h2>
+      <p style="line-height:1.6;margin-bottom:20px">
+       This portal is a community-driven initiative to protect the health and wellbeing of migrant workers in Kerala. Many workers face challenges like frequent relocations, language barriers, and lack of proper medical documentation — making it harder to receive continuous healthcare.
+
+
+Our platform provides a secure and centralized digital health record for every worker. With it, healthcare providers can quickly access medical history, perform timely checkups, and ensure workers receive the right treatment when needed.
+
+
+The system also aligns with the United Nations Sustainable Development Goals:
+
+ 
+  SDG 3 – Good Health & Wellbeing: Ensuring equal access to quality healthcare for all.
+
+  SDG 10 – Reduced Inequalities: Supporting vulnerable migrant communities and closing healthcare gaps.
+
+
+By digitizing medical information, we make healthcare accessible, reliable, and portable — no matter where a worker travels. Together, we can improve preventive care, reduce health risks, and safeguard the dignity of Kerala’s migrant workforce
+      </p>
+      <button class="btn" onclick="showPage('login')">Login</button>
+      <button class="btn secondary" onclick="showPage('register')">Register</button>
+    </div>
+  </div>
+</section>
+
+<!-- LOGIN -->
+<section id="login" class="page">
+  <div class="container">
+    <div class="card">
+      <h2>Login</h2>
+      <input placeholder="User ID"><br><br>
+      <input type="password" placeholder="Password"><br><br>
+      <button class="btn" onclick="showPage('employee')">Login</button>
+      <button class="btn secondary" onclick="showPage('home')">Back</button>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTER -->
+<section id="register" class="page">
+  <div class="container">
+    <div class="card">
+      <h2>Register Migrant Worker</h2>
+      <div class="form-grid">
+        <input placeholder="Full Name">
+        <input placeholder="Phone Number">
+        <select><option>Select Gender</option></select>
+        <input placeholder="Age">
+        <input placeholder="Place of Origin">
+        <input placeholder="Employer / Contractor">
+        <input placeholder="Job / Work Type">
+        <input placeholder="Known Health Conditions">
+      </div><br>
+      <button class="btn" onclick="showPage('employee')">Save Record</button>
+      <button class="btn secondary" onclick="showPage('home')">Back</button>
+    </div>
+  </div>
+</section>
+
+<!-- EMPLOYEE DETAILS -->
+<section id="employee" class="page">
+  <div class="container">
+    <div class="card">
+      <h2>Details of the Employee</h2>
+      <div class="row"><span class="label">Name</span><span>Ramesh Kumar</span></div>
+      <div class="row"><span class="label">Aadhaar</span><span>111122223333</span></div>
+      <div class="row"><span class="label">Phone</span><span>+91 98765 43210</span></div>
+      <div class="row"><span class="label">Age</span><span>32</span></div>
+      <div class="row"><span class="label">Gender</span><span>Male</span></div>
+      <div class="row"><span class="label">Employer</span><span>ABC Constructions</span></div>
+      <div class="row"><span class="label">Origin</span><span>Kerala</span></div>
+      <div class="row"><span class="label">Known Conditions</span><span>None</span></div><br>
+      <button class="btn" onclick="showPage('checkup')">Checkup Details</button>
+      <button class="btn secondary" onclick="showPage('home')">Logout</button>
+    </div>
+  </div>
+</section>
+
+<!-- CHECKUP -->
+<section id="checkup" class="page">
+  <div class="container">
+    <div class="card">
+      <h2>Checkup Details</h2>
+
+      <div class="checkup">
+        <strong>Checkup — 2025-01-10</strong>
+        <div class="row"><span class="label">BP</span><span>120/80</span></div>
+        <div class="row"><span class="label">Blood Sugar</span><span>95</span></div>
+        <div class="row"><span class="label">BMI</span><span>22.4</span></div>
+        <div class="row"><span class="label">SpO₂</span><span>98%</span></div>
+        <div class="row"><span class="label">Doctor Notes</span><span>Fit and healthy</span></div>
+      </div>
+
+      <div class="checkup">
+        <strong>Checkup — 2025-04-15</strong>
+        <div class="row"><span class="label">BP</span><span>130/85</span></div>
+        <div class="row"><span class="label">Blood Sugar</span><span>105</span></div>
+        <div class="row"><span class="label">BMI</span><span>23.0</span></div>
+        <div class="row"><span class="label">SpO₂</span><span>97%</span></div>
+      </div>
+
+      <button class="btn secondary" onclick="showPage('employee')">Back</button>
+    </div>
+  </div>
+</section>
+
+<footer>© 2025 Digital Health Record — Demo</footer>
+
+<script>
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
